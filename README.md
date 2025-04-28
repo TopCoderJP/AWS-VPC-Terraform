@@ -30,7 +30,6 @@ Configuration Files
 
 -   main.tf - Primary Terraform configuration that defines AWS resources including VPC, subnets, Internet Gateway, and route tables.
 -   state.tf - Configuration for Terraform state management using S3 bucket for remote state storage and DynamoDB for state locking.
--   there are several empty files files to demonstrate folder organizational structure. 
 
 
 
