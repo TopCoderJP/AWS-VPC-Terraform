@@ -1,26 +1,18 @@
-AWS - Terraform - Infrastructure as Code 
+AWS VPC - Terraform - Infrastructure as Code 
 =========================================
 
-This directory contains Terraform configurations for deploying AWS infrastructure in a repeatable, consistent manner.
-
-Configuration Files 
--------------------
-
--   main.tf - Primary Terraform configuration that defines AWS resources including VPC, subnets, Internet Gateway, route tables, EC2 instances, and security groups.
--   state.tf - Configuration for Terraform state management using S3 bucket for remote state storage and DynamoDB for state locking.
-
+ 
 
 Infrastructure Components | インフラコンポーネント
 ------------------------------------------------
 
-The Terraform configuration deploys:
+This Terraform configuration deploys:
 
--   A VPC with CIDR block 192.168.0.0/16
+-   A basic AWS VPC with CIDR block 192.168.0.0/16
 -   Multiple subnets across availability zones (ap-northeast-1a and ap-northeast-1c)
 -   Internet Gateway for public internet access
 -   Route table and associations for subnet connectivity
--   EC2 instances (MyServer and AppServer)
--   Security group allowing SSH access
+
 
 Remote State Management
 -----------------------
@@ -30,6 +22,18 @@ This project uses remote state management with:
 -   S3 bucket: "topcoder-state-bucket"
 -   State file key: "global/s3/terraform.tfstate"
 -   DynamoDB table: "terraform-lock-table" for state locking
+
+  
+
+Configuration Files 
+-------------------
+
+-   main.tf - Primary Terraform configuration that defines AWS resources including VPC, subnets, Internet Gateway, and route tables.
+-   state.tf - Configuration for Terraform state management using S3 bucket for remote state storage and DynamoDB for state locking.
+-   there are several empty files files to demonstrate folder organizational structure. 
+
+
+
 
 Usage | 使い方
 --------------
